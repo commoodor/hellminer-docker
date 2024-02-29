@@ -1,0 +1,4 @@
+#!/bin/bash
+cpu_threads=$(grep -c '^processor' /proc/cpuinfo)
+echo "Hellminer with Param: -c $POOL_ADDRESS -u $WALLET_USER.$WORKER -p $PASSWORD --cpu $cpu_threads --priority 1 --no-colors $EXTRAS"
+./hellminer -c $POOL_ADDRESS -u $WALLET_USER.$WORKER -p $PASSWORD --cpu $cpu_threads --priority 1 --no-colors $EXTRAS
