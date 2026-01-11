@@ -1,3 +1,4 @@
+[![Docker](https://github.com/commoodor/hellminer-docker/actions/workflows/docker-publish.yml/badge.svg?branch=latest)](https://github.com/commoodor/hellminer-docker/actions/workflows/docker-publish.yml)
 # Docker-Hellminer
 Docker containing Hellminer v0.59.1
 
