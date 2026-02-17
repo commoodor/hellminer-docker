@@ -6,21 +6,26 @@ More documentation on Hellminer v0.59.1: https://github.com/hellcatz/hminer
 
 ## Here is a example to get going with a server using compose. ##
 ~~~
----
-version: '3'
+version: '3.8'
+
 services:
-# -------------------------------------------------------------------
-  Hellminer:
-    tty: true
+  hellminer_saturn:
+    container_name: hellminer_saturn
     image: commoodor/hellminer-docker
-    restart: always
+    restart: unless-stopped
+    tty: true
+    mem_limit: 1g
     environment:
-      POOL_ADDRESS: stratum+ssl://ap.luckpool.net:3956#xnsub
+      POOL_ADDRESS: stratum+ssl://sg.vipor.net:5140
       WALLET_USER: RRmpZ1tajCXVG9999LWUD4CPVyZvjpe3iZ
       WORKER: Saturn
       PASSWORD: x
       EXTRAS:
-# -------------------------------------------------------------------
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 ~~~
 
 | ** Variable name ** | **Description** | **Value  example** |
